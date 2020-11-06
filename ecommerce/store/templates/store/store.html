@@ -1,0 +1,49 @@
+{% extends 'store/main.html' %}
+{% load static %}
+{% block content %}
+<!--================ Hero banner start =================-->
+<section class=" container-fluid hero-banner">
+    <div class="container">
+      <div class="row no-gutters align-items-center pt-60px">
+        <div class="col-5 d-none d-sm-block">
+          <div class="hero-banner__img">
+          </div>
+        </div>
+        <div class="col-sm-7 col-lg-6 offset-lg-1 pl-4 pl-md-5 pl-lg-0">
+          <div class="hero-banner__content">
+            <h4>SGC Online Shopping</h4>
+            <h1>SA's <span style="color: #FF6600"> Best</span> Online Market<span style="color: #FF6600">place</span></h1>
+            <p>We offer end-to-end products that reaches over a million customers</p>
+            <a class="button button-hero" href="#">Departments</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--================ Hero banner start =================-->
+
+  <div class="w3-content">
+    <img class="mySlides" src="{% static 'images/banner1.png' %}" alt="custom_html_banner1" style="width:100%">
+    <img class="mySlides" src="{% static 'images/banner2.png' %}" alt="custom_html_banner2" style="width:100%">
+    <img class="mySlides" src="{% static 'images/banner3.png' %}" alt="custom_html_banner3" style="width:100%">
+    <img class="mySlides" src="{% static 'images/banner5.png' %}" alt="custom_html_banner1" style="width:100%">
+    <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+    <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+   </div>
+
+    <div class="row">
+        {% for product in products %}
+        
+            <div class="col-lg-4">
+                <img  class="thumbnail" src="{{product.imageURL}}" alt="reload to display image">
+                <div class="box-element product">
+                    <h6><strong>{{product.name}}</strong></h6>
+                    <hr>
+                    <button data-product="{{product.id}}" data-action="add" class="btn btn-outline-secondary add-btn update-cart">Buy<img  id="cart-icon" src="{% static 'images/cart3.png' %}"></button>
+                    <a  class="btn btn-outline-success"href="#">View</a>
+                    <h4 style="display: inline-block; float: right;">R{{product.price|floatformat:2}}</h4>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock content %}

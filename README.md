@@ -1,10 +1,25 @@
-# E-Commerce-Web-App
+# About
 e-commerce website built using Django, to support consumers and retailers have easy access market
 
-deploy for Sgc company
+# Installation
+
+- git clone https://github.com/Sgcholdings/E-Commerce
 
 # how to run it
 
 - cd ecommerce
-- python3 manage.py runserver
+
+# Activate or Create New Environment
+
+- py -m venv env
+
+- env\Scripts\activate
+
+# Run
+
+- pip install -r requirements.txt
+
+- python manage.py migrate
+
+- python manage.py runserver
 
